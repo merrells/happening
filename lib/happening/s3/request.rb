@@ -28,7 +28,7 @@ module Happening
       
       def execute
         Happening::Log.debug "Request: #{http_method.to_s.upcase} #{url}"
-        @response = http_class.new(url).send(http_method, :timeout => options[:timeout], :head => options[:headers], :body => options[:data], :ssl => options[:ssl])
+        @response = http_class.new(url).send(http_method, :timeout => options[:timeout], :head => options[:headers], :body => options[:data], :ssl => options[:ssl], :host => options[:host])
 
         @response.errback { error_callback }
         @response.callback { success_callback }
