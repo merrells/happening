@@ -19,7 +19,7 @@ module Happening
             :verify_peer => false
           }
         }.update(options)
-        options.assert_valid_keys(:timeout, :on_success, :on_error, :retry_count, :headers, :data, :ssl)
+        options.assert_valid_keys(:timeout, :on_success, :on_error, :retry_count, :headers, :data, :ssl, :host)
         @http_method = http_method
         @url = url
         

@@ -21,7 +21,7 @@ module Happening
           :permissions => 'private',
           :ssl => Happening::S3.ssl_options
         }.update(options.symbolize_keys)
-        options.assert_valid_keys(:timeout, :server, :protocol, :aws_access_key_id, :aws_secret_access_key, :retry_count, :permissions, :ssl)
+        options.assert_valid_keys(:timeout, :server, :protocol, :aws_access_key_id, :aws_secret_access_key, :retry_count, :permissions, :ssl, :host)
         @aws_id = aws_id.to_s
         @bucket = bucket.to_s
       
